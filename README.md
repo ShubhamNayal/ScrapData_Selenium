@@ -14,7 +14,7 @@ localhost:27017
     
 ## Tech Stack
 
-**Language:** Java
+**Language:** Java,Gherkins
 
 **Tools and frameworks:** Selenium,Junit,Cucumber
 
