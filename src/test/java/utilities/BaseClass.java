@@ -30,7 +30,7 @@ public class BaseClass {
         collection = database.getCollection("mycollections2");
         return collection;
     }
-    public Properties setUpDriver()  {
+    public Properties setUpPrerequisiteProperties()  {
         properties = new Properties();
         try {
             FileInputStream fileInputStream = new FileInputStream("src\\test\\java\\utilities\\config.properties");

@@ -23,20 +23,20 @@ public class jobDataScrapingStepDefinitions extends BaseClass {
     public jobDataScrapingStepDefinitions() {
         driver = startDriver();
         PageFactory.initElements(driver,this);
-        properties =setUpDriver();
+        properties =setUpPrerequisiteProperties();
         collection = startDb();
         helperFunction = new HelperClass(driver);
     }
     @Given("^Go to Tipico job page$")
     public void go_to_tipico_job_page()  {
         url = properties.getProperty("url");
-       driver.get(url);
+        driver.get(url);
     }
 
     @When("^On landing on the jobs page$")
     public void on_landing_on_the_jobs_page()  {
         helperFunction.closeCookiesPage();
-           }
+    }
 
     @Then("^fetch all the jobs$")
     public void fetch_all_the_jobs()  {
