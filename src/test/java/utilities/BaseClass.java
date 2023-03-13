@@ -12,7 +12,7 @@ import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
 
-public class BaseClass {
+public abstract class BaseClass {
     MongoClient mongoClient ;
     MongoDatabase database;
     MongoCollection<Document> collection;
@@ -26,8 +26,8 @@ public class BaseClass {
     }
     public  MongoCollection<Document> startDb(){
         mongoClient = MongoClients.create("mongodb://localhost:27017");
-        database = mongoClient.getDatabase("mydb2");
-        collection = database.getCollection("mycollections2");
+        database = mongoClient.getDatabase("mydb");
+        collection = database.getCollection("mycollections");
         return collection;
     }
     public Properties setUpPrerequisiteProperties()  {

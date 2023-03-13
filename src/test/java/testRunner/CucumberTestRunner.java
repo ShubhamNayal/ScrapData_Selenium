@@ -6,6 +6,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = {"src/test/java/resources/feature"},glue = {"stepDefinitionPackage"}
-        ,monochrome = true,plugin = {"html:target/cucumber.html"})
+        ,monochrome = true,plugin = {"html:src/test/cucumber.html"})
 public class CucumberTestRunner {
 }

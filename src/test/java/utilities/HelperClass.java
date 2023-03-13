@@ -14,15 +14,15 @@ public class HelperClass {
         PageFactory.initElements(driver,this);
     }
     @FindBy(xpath = "//span[@class='job-category']")
-    List<WebElement> department;
+    private List<WebElement> department;
     @FindBy(xpath = "//h2[@class='card-title']")
-    List<WebElement> jobName;
+    private List<WebElement> jobName;
     @FindBy(xpath = "//p[@class='card-subtitle']")
-    List<WebElement>location;
+    private List<WebElement>location;
     @FindBy(xpath = "//span[text()='Next Page']")
-    WebElement nextText;
+    private WebElement nextText;
     @FindBy(id = "_evidon-accept-button" )
-    WebElement element;
+    private WebElement element;
     public void closeCookiesPage() {
         try {
             element.click();
@@ -41,6 +41,7 @@ public class HelperClass {
             driver.executeScript("arguments[0].click();", nextText);
             isNextVisible = nextVisible(driver);
         }
+        getDataFromWeb(driver,collection);
     }
     public boolean nextVisible(ChromeDriver driver){
         try {
@@ -50,7 +51,7 @@ public class HelperClass {
             return false;
         }
     }
-    public void getDataFromWeb(ChromeDriver driver, MongoCollection<Document> collection){
+    private void getDataFromWeb(ChromeDriver driver, MongoCollection<Document> collection){
         for (int i=0;i<department.size();i++){
             addToMongo(department.get(i).getText(),jobName.get(i).getText(),location.get(i).getText(),collection);
         }
