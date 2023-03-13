@@ -11,6 +11,9 @@ localhost:27017
 
 Make sure you have the latest Chrome version(111+)
 
+#### Preferred IDE 
+Intelij Idea
+
 
 
     
