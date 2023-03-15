@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.bson.Document;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import utilities.BaseClass;
@@ -15,7 +16,7 @@ import java.io.FileInputStream;
 import java.util.Properties;
 
 public class jobDataScrapingStepDefinitions extends BaseClass {
-    ChromeDriver driver;
+    WebDriver driver;
     String url;
     HelperClass helperFunction;
     MongoCollection<Document> collection;
